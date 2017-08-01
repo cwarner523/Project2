@@ -1,3 +1,5 @@
+<% include ./partials/boilerplate %>
+
 <div class='login-container'>
   <form method='POST' action='/auth/login'>
     <input name='username' type='text' placeholder='username' required />
@@ -5,3 +7,5 @@
     <input type='submit' value='Log in!' />
   </form>
 </div>
+
+<% include ./partials/end %>
