@@ -1,4 +1,4 @@
---\c recipe_app;
+\c recipe_app;
 
 CREATE TABLE IF NOT EXISTS users 
 (

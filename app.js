@@ -50,6 +50,12 @@ app.get('/', (req, res) => {
     });
 });
 
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
+
+const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);
+
 //error message
 app.get('*', (req, res) => {
     res.status(404).send('not found!');
