@@ -27,6 +27,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// static files
+app.use(express.static('public'));
+
+//views
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 //setting up port
 const port = process.env.PORT || 3000;
 // tell the app to listen to a specific port
@@ -36,7 +43,11 @@ app.listen(port, () => {
 
 // index route
 app.get('/', (req, res) => {
-    res.send('Hello world!');
+    res.render('index', {
+        message: 'Hello World!',
+        currentPage: 'home',
+        documentTitle: 'Delicio',
+    });
 });
 
 //error message
