@@ -1,0 +1,37 @@
+body{
+    background-image: url("/images/background.png");
+    background-size:cover;
+    margin-left:-5px;
+}
+
+.homepage{
+    display:flex;
+    flex:1;
+    justify-content: center;
+}
+
+.homepage a{
+    font-family:Baskerville;
+    text-decoration: none;
+    padding:10px 20px;
+    font-size:24px;
+    background: #96474B;
+    letter-spacing: 0.08em;
+    color:#E2E2E2;
+    margin-right:30px;
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.homepage a:hover{
+    color:#96474B;
+    background:#E2E2E2;
+}
+
+.homepage p {
+    font-family:Baskerville;
+    color: #E2E2E2;
+    padding:10px;
+    margin-top:-40px;
+    font-size:42px;
+}
