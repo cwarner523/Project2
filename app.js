@@ -42,7 +42,7 @@ app.listen(port, () => {
 });
 
 // index route
-app.get('/', (req, res) => {
+app.get('/',(req, res) => {
     res.render('index', {
         message: 'Hello World!',
         currentPage: 'home',
@@ -55,6 +55,9 @@ app.use('/auth', authRoutes);
 
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
+
+const recipesRoutes = require('./routes/recipe-routes');
+app.use('/categories', recipesRoutes);
 
 //error message
 app.get('*', (req, res) => {

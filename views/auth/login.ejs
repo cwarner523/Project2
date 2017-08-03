@@ -1,11 +1,21 @@
 <% include ../partials/boilerplate %>
 
-<div class='login-container'>
+<div class="behindlogin">
+
+  <h1>Sign In</h1>
+
   <form method='POST' action='/auth/login'>
+
+    <div class="input">
     <input name='username' type='text' placeholder='username' required />
+    </div>
+
+    <div class="input">
     <input name='password' type='password' placeholder='password' required />
+    </div>
     <input type='submit' value='Log in!' />
   </form>
+
 </div>
 
 <% include ../partials/end %>

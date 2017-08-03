@@ -8,4 +8,15 @@ CREATE TABLE IF NOT EXISTS users
     email VARCHAR(255),
     firstname VARCHAR(255),
     lastname VARCHAR(255)
-)
+);
+
+CREATE TABLE IF NOT EXISTS recipes (
+  id BIGSERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  servingsize INTEGER,
+  healthlabels VARCHAR(255),
+  ingredients VARCHAR(1024),
+  calories INTEGER,
+  url VARCHAR(1024),
+  image VARCHAR(1024)
+);
