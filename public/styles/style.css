@@ -1,10 +1,9 @@
 body{
     background-image: url("/images/background.png");
     background-size:cover;
-    margin-left:-5px;
 }
 
-body #Profile{
+body.Categories{
     background:#E2E2E2;
     background-image: none;
 }

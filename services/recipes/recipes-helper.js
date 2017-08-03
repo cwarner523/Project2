@@ -1,3 +1,5 @@
+
+/*
 require('isomorphic-fetch');
 require('dotenv').config();
 
@@ -18,3 +20,4 @@ function getRecipes (req, res, next) {
 module.exports = {
     getRecipes,
 }
+*/

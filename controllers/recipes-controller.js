@@ -2,17 +2,26 @@ const Recipe = require('../models/recipe')
 const recipesController = {};
 
 recipesController.index = (req, res) => {
+    Recipe.findAll().then(labels =>{
+        console.log(labels);
     res.render('categories/categories-index', {
-       currentPage:'Categories'
+       currentPage:'Categories',
+       data: labels
     });
-}
+    }).catch(err=>{
+        console.log(err);
+        res.status(500).json(err);
+    })
+
+};
 
 recipesController.category = (req, res) => {
     Recipe.findById(req.params.healthlabels)
-    .then(healthlabel => {
-        res.render('recipe/recipe-single', {
-            message: 'ok',
-            data: healthlabel,
+    .then(recipes => {
+        console.log(recipes,'fdiufbuisfhihdifu');
+        res.render('categories/categories-single', {
+            message: 'this works',
+            data: recipes,
           });
         }).catch(err => {
         console.log(err);

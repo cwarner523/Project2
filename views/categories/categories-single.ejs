@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+
+<div class='category_indivdual'>
+    <% for(let food of data) {%>
+    <h1><%= food.title %></h1>
+    <h3><%= food.servingsize %></h3>
+    <h4><%= food.healthlabels %></h4>
+    <h4><%= food.ingredients %></h4>
+    <h4><%= food.calories %></h4>
+    <h4><%= food.url %></h4>
+    <%}%>
+</div>
+
+<% include ../partials/end%>
