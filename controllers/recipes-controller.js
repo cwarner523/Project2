@@ -20,6 +20,7 @@ recipesController.category = (req, res) => {
     .then(recipes => {
         console.log(recipes,'fdiufbuisfhihdifu');
         res.render('categories/categories-single', {
+            currentPage:'subCategories',
             message: 'this works',
             data: recipes,
           });

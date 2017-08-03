@@ -1,10 +1,13 @@
 <% include ../partials/boilerplate %>
+<% include ../partials/nav %>
+
+<div class="categories">
+<h1>categories</h1>
 
 <% for (let recipe of data) { %>
         <a href='/categories/<%= recipe.healthlabels%>'><%= recipe.healthlabels %></a>
-    </div>
 <% } %> 
 
-</form>
+</div>
 
 <% include ../partials/end %>

@@ -8,6 +8,16 @@ body.Categories{
     background-image: none;
 }
 
+body.Profile{
+    background:#E2E2E2;
+    background-image: none;
+}
+
+body.subCategories{
+    background:#E2E2E2;
+    background-image: none;
+}
+
 .homepage{
     display:flex;
     flex:1;
@@ -38,6 +48,17 @@ body.Categories{
     padding:10px;
     margin-top:-40px;
     font-size:42px;
+}
+
+nav li{
+    background:#303030;
+}
+
+nav img{
+    width:120px;
+    display:flex;
+    margin:0 auto;
+    padding:5px;
 }
 
 .behindregister{
@@ -99,4 +120,18 @@ h1{
     width:700px;
     height:320px;
     margin-top:60px;
+}
+
+.categories h1{
+    color:#303030;
+    margin-top:25px;
+    letter-spacing: 0.1em;
+    font-size:80px;
+}
+
+.userprofile h1{
+    color:#303030;
+    margin-top:25px;
+    letter-spacing: 0.1em;
+    font-size:80px;
 }
