@@ -14,12 +14,15 @@ userRoutes.get('/add', (req, res) => {
     });
 });
 
-userRoutes.post('/addRecipe', (req, res)=>{
-    console.log(req.body.user);
-    console.log(req.body.recipe);
+userRoutes.post('/addRecipe/:id', usersController.saveRecipe);
+//(req, res)=>{
+    //console.log(req.params.id);
+    //console.log(req.user);
+    //console.log(req.body.recipe);
     // res.redirect()
-})
+//})
 
+userRoutes.post('/savedRecipe', usersController.saved);
 
 userRoutes.use('/recipes', recipesRoutes);
 
