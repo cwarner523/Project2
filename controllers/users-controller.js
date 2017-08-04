@@ -5,6 +5,7 @@ const usersController = {};
 
 usersController.index = (req, res) => {
     //after registering it goes to this route
+    console.log(req.user);
   res.render('user/user-index', {
       user: req.user,
       currentPage:'Profile'

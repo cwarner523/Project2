@@ -33,5 +33,46 @@ recipesController.category = (req, res) => {
     });
 };
 
+recipesController.id = (req, res) => {
+    Recipe.findRecipe(req.params.id)
+    .then(recipes => {
+        console.log(recipes,'fdiufbuisfhihdifu');
+        console.log(req.user);
+        res.render('categories/recipes-single', {
+            currentPage:'subCategories',
+            message: 'this works',
+            user: req.user,
+            data: recipes,
+          });
+        }).catch(err => {
+        console.log(err);
+        res.status(500).json({
+        message: 'Not found!',
+        error: err,
+      });
+    });
+};
+
+
+recipesController.create = (req, res) => {
+    Recipe.create({
+        title: req.body.title,
+        servingsize: req.body.servingsize,
+        healthlabels: req.body.healthlabels,
+        ingredients: req.body.ingredients,
+        calories: req.body.calories,
+        url: req.body.url,
+        image: req.body.image,
+    }).then(() => {
+        res.redirect('/user');
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({
+            message: 'Could not create successfully',
+            error:err,
+        });
+    });
+};
+
 
 module.exports = recipesController;

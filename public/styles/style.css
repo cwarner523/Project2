@@ -14,7 +14,7 @@ body.Profile{
 }
 
 body.subCategories{
-    background:#E2E2E2;
+   background:#E2E2E2;
     background-image: none;
 }
 
@@ -50,16 +50,34 @@ body.subCategories{
     font-size:42px;
 }
 
+nav {
+    background:#303030;
+    height:140px;
+}
+
 nav li{
     background:#303030;
+    display: flex;
+    float:left;
+    padding:10px;
+    text-decoration: none;
 }
 
 nav img{
     width:120px;
     display:flex;
-    margin:0 auto;
-    padding:5px;
+    margin-left:50px;
 }
+
+nav h1 {
+    font-size:20px;
+    color: #E2E2E2;
+    letter-spacing: 0.03em;
+    margin-top:50px;
+    margin-left:10px;;
+    text-decoration: none;
+}
+
 
 .behindregister{
     margin:0 auto;
@@ -134,4 +152,53 @@ h1{
     margin-top:25px;
     letter-spacing: 0.1em;
     font-size:80px;
+}
+
+
+.individuals img{
+    width: 80vh;
+}
+
+.individuals{
+    width:80%;
+    margin:0 auto;
+}
+
+.rec_single{
+    width:90%;
+    height: 450px;
+    margin:0 auto;
+    background:rgba(226,226, 226, 0.64);
+    z-index: -1;
+    margin-top:20px;
+}
+
+.rec_single h2{
+    color:#303030;
+    font-size:38px;
+    font-family: baskerville;
+    letter-spacing: 0.1em;
+    margin-left:50px;
+    margin-bottom:20px;
+}
+
+.rec_single h3{
+    font-family:baskerville;
+    font-size:22px;
+    line-height: 1.5em;
+    margin-left:70px;
+    margin-bottom:30px
+}
+
+.rec_single a {
+    font-family:baskerville;
+    font-size:26px;
+     color:#303030;
+     text-decoration:none;
+    margin-left:60px;
+}
+
+.rec_single [type='submit'] {
+    float:right;
+    margin-right:30px;
 }

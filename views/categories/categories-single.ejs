@@ -1,15 +1,20 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
-<div class='category_indivdual'>
-    <% for(let food of data) {%>
+<div class='individuals'>
+
+<% for(let food of data) {%>
+<div class='category_indivdual' >
+    <img src="<%= food.image %>">
     <h1><%= food.title %></h1>
     <h3><%= food.servingsize %></h3>
-    <h4><%= food.healthlabels %></h4>
-    <h4><%= food.ingredients %></h4>
     <h4><%= food.calories %></h4>
-    <h4><%= food.url %></h4>
-    <%}%>
+
+<a href="/categories/<%= food.healthlabels %>/<%= food.id %>">See Recipe</a>
+  <%}%>
+
 </div>
+</div>
+
 
 <% include ../partials/end%>

@@ -20,3 +20,11 @@ CREATE TABLE IF NOT EXISTS recipes (
   url VARCHAR(1024),
   image VARCHAR(1024)
 );
+
+CREATE TABLE IF NOT EXISTS users_recipes
+(
+    id BIGSERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    recipe_id INTEGER REFERENCES recipes(id),
+    comments VARCHAR(1024)
+);
