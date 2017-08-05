@@ -1,0 +1,44 @@
+<% include ../partials/boilerplate %>
+
+<style>
+
+img{
+    width:80%;
+    height:80%;
+    display: flex;
+    flex:1;
+    align-items: center;
+}
+
+.rectitle{
+    display:flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+ </style>
+
+<div class="savedcontainers">
+
+<% for (let recipe of data) { %>
+
+<div class="savedrecipes">
+   <div class="recimg"> 
+    <img src="<%= recipe.image %>">
+   </div>
+
+   <div class="rectitle">
+    <a href="/categories/<%= recipe.healthlabels %>/<%= recipe.id %>"><h1><%= recipe.title %></h1></a>
+   </div>
+
+<form method='POST' action='/user/addRecipe/<%= data.id %>'>
+         <input type='submit' value ='Delete Recipe!' />
+    </form>
+
+   </div>
+
+<% } %>
+
+</div>
+
+<% include ../partials/end %>

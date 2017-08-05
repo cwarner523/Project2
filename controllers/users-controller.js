@@ -32,9 +32,9 @@ usersController.saveRecipe = (req, res) => {
 }
 
 usersController.saved = (req, res) => {
-    User.findAllRecipes(req.user.id).then(recipe => {
-    res.render('/user/save-recipes', {
-        currentpage: 'userprofile',
+    User.findAllRecipes(req.user.id).then(recipes => {
+    res.render('user/save-recipes', {
+        currentPage: 'userprofile',
         message: 'ok',
         data: recipes
         });
@@ -64,19 +64,14 @@ usersController.create = (req, res, next) => {
   });
 };
 
-// usersController.create =  (req, res) => {
-//     User.create({
-//         userId: req.user.id,
-//         recipeId: req.params.id,
-//     }).then(() => {
-//         res.redirect('/user');
-//     }).catch(err => {
-//         console.log(err);
-//         res.status(500).json({
-//             message: 'Could not create successfully',
-//             error: err,
-//         });
-//     });
-// };
+usersController.delete = (req, res) => {
+    User.destroy(req.params.id)
+    .then(() => {
+        res.redirect('/user/savedRecipe');
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+};
 
 module.exports = usersController;

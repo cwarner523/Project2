@@ -22,8 +22,8 @@ userRoutes.post('/addRecipe/:id', usersController.saveRecipe);
     // res.redirect()
 //})
 
-userRoutes.post('/savedRecipe', usersController.saved);
-
+userRoutes.get('/savedRecipe', usersController.saved);
 userRoutes.use('/recipes', recipesRoutes);
+userRoutes.delete('/deleteRecipe/:id', usersController.delete);
 
 module.exports = userRoutes;

@@ -34,9 +34,18 @@ User.findAllRecipes = (id) => {
     return db.query(`
     SELECT recipes.* FROM recipes
     JOIN users_recipes ON users_recipes.recipe_id = recipes.id
-    JOIN users ON users_recipes.user_id = users.id WHERE uses.id = $1
+    JOIN users ON users_recipes.user_id = users.id WHERE users.id = $1
     `, [id])
 }
+
+
+User.destroy = (id) => {
+    return db.none(`
+    DELETE FROM users_recipes
+    WHERE id = $1
+    `, [id]);
+}
+
 
 // User.findUserRecipes
 /*  SELECT recipes.* (FROM recipes 

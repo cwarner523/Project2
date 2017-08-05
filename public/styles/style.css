@@ -18,6 +18,11 @@ body.subCategories{
     background-image: none;
 }
 
+body.userprofile{
+    background:#E2E2E2;
+    background-image: none;
+}
+
 .homepage{
     display:flex;
     flex:1;
@@ -202,3 +207,31 @@ h1{
     float:right;
     margin-right:30px;
 }
+
+.savedcontainer {
+    width:80%;
+    margin: 0 auto;
+}
+
+.savedrecipes {
+    padding:10px;
+    margin:10px;
+    display:flex;
+    flex-direction: column;
+    border:2px solid green;
+    width:350px;
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+    float:left;
+}
+
+.savedrecipes img{
+    width:85%vw;
+    height:85%;
+}
+
+.savedrecipes h1{
+    font-size:30px;
+}
+
