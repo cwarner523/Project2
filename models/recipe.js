@@ -6,7 +6,7 @@ Recipe.findAll= ()=>{
     return db.query(`SELECT healthlabels FROM recipes`);
 };
 
-Recipe.findById = (healthlabels) => {
+Recipe.findByLabel = (healthlabels) => {
     return db.query(`
     SELECT *
     FROM recipes
@@ -31,5 +31,34 @@ Recipe.create = (recipe) => {
     RETURNING *
     `, [recipe.title, recipe.servingsize, recipe.healthlabels, recipe.ingredients, recipe.calories, recipe.url, recipe.image,]);
 };
+
+Recipe.findById = (id) => {
+    return db.oneOrNone(`
+    SELECT * FROM recipes
+    WHERE id = $1
+    `, [id]);
+};
+
+Recipe.update = (recipe, id) => {
+    return db.one(`
+    UPDATE recipes SET
+    title = $1,
+    servingsize= $2,
+    healthlabels= $3,
+    ingredients = $4,
+    calories= $5,
+    url= $6,
+    image= $7
+    WHERE id = $8
+    RETURNING *
+    `, [recipe.title, recipe.servingsize, recipe.healthlabels, recipe.ingredients, recipe.calories, recipe.url, recipe.image, id]);
+};
+
+Recipe.destroy = (id) => {
+    return db.none(`
+    DELETE FROM users_recipes
+    WHERE id = $1
+    `, [id]);
+}
 
 module.exports = Recipe;

@@ -5,6 +5,8 @@ const recipesController = require('../controllers/recipes-controller');
 const usersController = require('../controllers/users-controller');
 const authHelpers = require('../services/auth/auth-helpers');
 
+
+userRoutes.delete('/savedRecipe/:id', usersController.delete);
 userRoutes.get('/', authHelpers.loginRequired, usersController.index);
 userRoutes.post('/', recipesController.create);
 
@@ -15,15 +17,12 @@ userRoutes.get('/add', (req, res) => {
 });
 
 userRoutes.post('/addRecipe/:id', usersController.saveRecipe);
-//(req, res)=>{
-    //console.log(req.params.id);
-    //console.log(req.user);
-    //console.log(req.body.recipe);
-    // res.redirect()
-//})
+
+userRoutes.get('/savedRecipe/:id', usersController.edit);
+userRoutes.put('/savedRecipe/:id', usersController.update);
 
 userRoutes.get('/savedRecipe', usersController.saved);
 userRoutes.use('/recipes', recipesRoutes);
-userRoutes.delete('/deleteRecipe/:id', usersController.delete);
+
 
 module.exports = userRoutes;

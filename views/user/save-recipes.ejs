@@ -31,7 +31,8 @@ img{
     <a href="/categories/<%= recipe.healthlabels %>/<%= recipe.id %>"><h1><%= recipe.title %></h1></a>
    </div>
 
-<form method='POST' action='/user/addRecipe/<%= data.id %>'>
+<form method = 'POST' action='./savedRecipe/<%= recipe.id %>?_method=DELETE'>  
+               
          <input type='submit' value ='Delete Recipe!' />
     </form>
 

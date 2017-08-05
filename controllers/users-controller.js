@@ -64,7 +64,39 @@ usersController.create = (req, res, next) => {
   });
 };
 
+usersController.edit = (req, res) => {
+     User.findById(req.params.id)
+    .then(recipes => {
+        res.render('user/recipe-edit', {
+             data: recipes,
+                     })
+     }).catch (err => {
+                  console.log(err);
+         res.status(500).json({err});
+     });
+ }
+
+ usersController.update = (req, res) => {
+     User.update({
+         title: req.body.title,
+         servingsize: req.body.servingsize,
+         healthlabels: req.body.healthlabels,
+         ingredients: req.body.ingredients,
+        calories: req.body.calories,
+         url: req.body.url,
+         image: req.body.image,
+    }, req.params.id).then(recipes => {
+         res.redirect('/user');
+     }).catch(err => {
+         console.log(err);
+         res.status(500).json({ err });
+     });
+ }
+
+
 usersController.delete = (req, res) => {
+
+    console.log("Im here",req.params.id)
     User.destroy(req.params.id)
     .then(() => {
         res.redirect('/user/savedRecipe');

@@ -9,6 +9,14 @@ User.findByUserName = (username) => {
     `, [username]);
 };
 
+
+User.destroy = (id) => {
+    return db.none(`
+    DELETE FROM users_recipes
+    WHERE recipe_id = $1
+    `, [id]);
+}
+
 User.create = (user) => {
     return db.one(`
     INSERT INTO users
@@ -36,14 +44,6 @@ User.findAllRecipes = (id) => {
     JOIN users_recipes ON users_recipes.recipe_id = recipes.id
     JOIN users ON users_recipes.user_id = users.id WHERE users.id = $1
     `, [id])
-}
-
-
-User.destroy = (id) => {
-    return db.none(`
-    DELETE FROM users_recipes
-    WHERE id = $1
-    `, [id]);
 }
 
 
