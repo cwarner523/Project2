@@ -47,17 +47,4 @@ User.findAllRecipes = (id) => {
 }
 
 
-// User.findUserRecipes
-/*  SELECT recipes.* (FROM recipes 
-JOIN users_recipes ON recipe.id = users_recipes.recipe_id 
-JOIN users ON users_recipes.user_id = users.id
-WHERE users.id = $1)
-
-//SELECT recipes.* FROM recipes JOIN 
-users_recipes ON users_recipes.recipe_id = 
-recipes.id JOIN users ON users_recipes.user_id = 
-users.id WHERE users.id = 8
-
-
-*/
 module.exports = User;

@@ -3,35 +3,40 @@
 
 <style>
 
-.category_individual{
-    width:450px;
-    border:2px solid red;
-    margin-top:30px;
-    display: flex;
-    flex-direction: column;
-    
+.category_individual img{
+    width:80%vh;
 }
 
-.category_individual img{
-    width:100%;
-    height:100%;
+.category_individual h1{
+    font-size:48px;
 }
+
+.indiv_info {
+    display: flex;
+    flex-direction: column;
+}
+
 
 </style>
 
-<div class='individuals'>
+
 
 <% for(let food of data) {%>
 <div class='category_individual' >
-    <img src="<%= food.image %>">
+
+    <div class="indiv_pic">
+        <img src="<%= food.image %>">
+
+    <div class='indiv_info'>
     <h1><%= food.title %></h1>
     <h3><%= food.servingsize %></h3>
     <h4><%= food.calories %></h4>
 
 <a href="/categories/<%= food.healthlabels %>/<%= food.id %>">See Recipe</a>
+</div>
+    </div>
   <%}%>
 
-</div>
 </div>
 
 

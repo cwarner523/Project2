@@ -76,10 +76,11 @@ recipesController.create = (req, res) => {
 
 
 recipesController.edit = (req, res) => {
-     User.findById(req.params.id)
+     Recipe.findById(req.params.id)
     .then(recipes => {
         res.render('categories/recipe-edit', {
-             data: recipes,
+             recipe: recipes,
+             currentPage: 'edit'
             })
         }).catch (err => {
             console.log(err);
@@ -88,7 +89,7 @@ recipesController.edit = (req, res) => {
  }
 
 recipesController.update = (req, res) => {
-     User.update({
+     Recipe.update({
          title: req.body.title,
          servingsize: req.body.servingsize,
          healthlabels: req.body.healthlabels,

@@ -1,13 +1,69 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
+<style>
+
+#pic{
+    width:250px;
+    height:250px;
+    background:white;
+    float:left;
+    margin-top:30px;
+    margin-left:50px;
+}
+
+.userprofile{
+    width:70%;
+    margin:0 auto;
+}
+
+.userprofile h2{
+    color:#303030;
+    margin-top:15px;
+    letter-spacing: 0.05em;
+    line-height: 0.4em;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+.userinfo{
+    margin-left:400px;
+    margin-top:100px;
+}
+
+.userinfo a{
+    background:#303030;
+    padding:10px;
+    color:#E2E2E2;
+    font-family: baskerville;
+    text-decoration: none;
+    font-size:18px;
+    letter-spacing: 0.03em;
+    margin-left:20px;
+}
+
+.userinfo a:hover{
+    background: #97474C;
+}
+
+</style>
+
 <div class="userprofile">
 
-<h1><%= user.username %> saved recipes</h1>
+<h1><%= user.username %> profile</h1>
+
+<div id="pic"></div>
+
+<div class="userinfo">
+    <h2>User: <%= user.username %></h2>
+     <h2>First Name: <%= user.firstname%></h2>
+      <h2>Last Name: <%= user.lastname %></h2>
+
+
 <a href="/user/add">Add Recipe Here</a>
 <a href='/user/savedRecipe'>View Saved Recipes</a>
 
-
+</div>
 </div>
 
 <% include ../partials/end %>

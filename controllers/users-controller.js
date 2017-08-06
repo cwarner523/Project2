@@ -24,7 +24,7 @@ usersController.saveRecipe = (req, res) => {
         //     currentPage: 'Saved'
         // });
         console.log(recipes);
-        res.redirect('/user');
+        res.redirect('/user/savedRecipe');
     }).catch(err=>{
         console.log(err);
         res.status(500).json(err);
@@ -63,35 +63,6 @@ usersController.create = (req, res, next) => {
     res.status(500).json({ err });
   });
 };
-
-usersController.edit = (req, res) => {
-     User.findById(req.params.id)
-    .then(recipes => {
-        res.render('user/recipe-edit', {
-             data: recipes,
-                     })
-     }).catch (err => {
-                  console.log(err);
-         res.status(500).json({err});
-     });
- }
-
- usersController.update = (req, res) => {
-     User.update({
-         title: req.body.title,
-         servingsize: req.body.servingsize,
-         healthlabels: req.body.healthlabels,
-         ingredients: req.body.ingredients,
-        calories: req.body.calories,
-         url: req.body.url,
-         image: req.body.image,
-    }, req.params.id).then(recipes => {
-         res.redirect('/user/savedRecipe');
-     }).catch(err => {
-         console.log(err);
-         res.status(500).json({ err });
-     });
- }
 
 
 usersController.delete = (req, res) => {

@@ -8,8 +8,8 @@ recipesRoutes.get('/', recipesController.index);
 
 recipesRoutes.get('/add', authHelpers.loginRequired, recipesController.create);
 
-recipesRoutes.get('/healthlabels/edit/:id', recipesController.edit);
-recipesRoutes.put('/healthlabels/edit/:id', recipesController.update);
+recipesRoutes.get('/:healthlabels/:id/edit', recipesController.edit);
+recipesRoutes.put('/:healthlabels/:id', recipesController.update);
 
 recipesRoutes.get('/:healthlabels', authHelpers.loginRequired, recipesController.category);
 recipesRoutes.get('/:healthlabels/:id', recipesController.id);
