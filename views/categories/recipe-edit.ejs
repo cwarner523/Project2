@@ -1,17 +1,104 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
+<style>
+
+.behindedit{
+    margin:0 auto;
+    background:rgba(226,226, 226, 0.74);
+    z-index: -1;
+    width:65%;
+    padding: 10px;
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+.input_rec{
+    width:700px;
+    margin:0 auto;
+}
+
+.input_rec input[name=title]{
+    width:400px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+.input_rec input[name=servingsize]{
+    width:50px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+.input_rec input[name=healthlabels]{
+    width:100px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.input_rec input[name=ingredients]{
+    width:630px;
+    height:100px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+.input_rec input[name=calories]{
+    width:80px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:20px;
+}
+
+.input_rec input[name= image]{
+    width:500px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:20px;
+}
+
+.input_rec input[name=url]{
+    width:630px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+</style>
+
+<div class="behindedit">
+
+<h1>Editing <%= recipe.title %></h1>
+
+    <div class="input_rec">
 <form method='POST' action='/categories/<%= recipe.healthlabels %>/<%= recipe.id %>?_method=PUT'>
     <input name='title' type='text' placeholder='<%= recipe.title %>' />
     <input name='servingsize' type='text' placeholder='<%= recipe.servingsize %>' />
     <input name='healthlabels' type='text' placeholder='<%= recipe.healthlabels %>' />
     <input name='ingredients' type='text' placeholder='<%= recipe.ingredients %>' />
     <input name='calories' type='text' placeholder='<%= recipe.calories %>' />
-    <input name='url' type='text' placeholder='<%= recipe.url %>' />
     <input name='image' type='text' placeholder='<%= recipe.image %>' />
+    <input name='url' type='text' placeholder='<%= recipe.url %>' />
     <input type='submit' value ='Submit!' />
 </form>
-
-
+    </div>
+</div>
 <% include ../partials/end %>
 

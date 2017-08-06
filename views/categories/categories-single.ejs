@@ -3,39 +3,116 @@
 
 <style>
 
-.category_individual img{
-    width:80%vh;
+.indiv_cat {
+    width:85%;
+    margin: 0 auto;
+}
+
+.category_individual {
+    padding:10px;
+    margin:10px;
+    display:flex;
+    flex-direction: column;
+    width:450px;
+    align-items: center;
+    justify-content: center;
+    float:left;
+    margin-bottom:20px;
 }
 
 .category_individual h1{
-    font-size:48px;
+    font-size:24px;
+    margin-top:-5px;
+}
+
+.indiv_pic img{
+    width:450px;
+    height: 100%;
+    display: flex;
+    flex:1;
+    align-items: center;
+}
+
+.indiv_title h1{
+    background:#303030;
+    padding:10px 4px;
+    color: #E2E2E2;
+    font-size:38px;
+    width: 442px;
+    margin-bottom:-5px;
+}
+
+.indiv_info h3{
+    padding:5px;
+    font-size:14px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.indiv_info h4{
+    padding:5px;
+    font-size:38px;
+    text-align: center;
+}
+
+.indiv_info a{
+    color: #E2E2E2;
+    text-decoration: none;
+    font-size:22px;
+    text-align: center;
+    font-family: baskerville;
+}
+
+.indiv_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background:#303030;
+    color: #E2E2E2;
 }
 
 .indiv_info {
-    display: flex;
-    flex-direction: column;
+    width:100px;
+    padding:5px 25px;
 }
-
 
 </style>
 
-
+<div class="indiv_cat">
 
 <% for(let food of data) {%>
-<div class='category_individual' >
+<div class='category_individual'>
+
+    <div class='indiv_title'>
+    <h1><%= food.title %></h1>
+    </div>
 
     <div class="indiv_pic">
         <img src="<%= food.image %>">
+    </div>
+
+<div class="indiv_container">
 
     <div class='indiv_info'>
-    <h1><%= food.title %></h1>
-    <h3><%= food.servingsize %></h3>
-    <h4><%= food.calories %></h4>
-
-<a href="/categories/<%= food.healthlabels %>/<%= food.id %>">See Recipe</a>
-</div>
+    <h3>Serving Size</h3>
+    <h4><%= food.servingsize %></h4>
     </div>
-  <%}%>
+
+    <div class="indiv_info">
+    <h3>Calories</h3>
+    <h4><%= food.calories %></h4>
+    </div>
+
+     <div class="indiv_info">
+    <a href="/categories/<%= food.healthlabels %>/<%= food.id %>">See Recipe</a>
+     </div>
+
+</div>
+
+</div>  
+    <%}%>
+
 
 </div>
 

@@ -1,16 +1,104 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
+<style>
+
+.behindadd{
+    margin:0 auto;
+    background:rgba(226,226, 226, 0.74);
+    z-index: -1;
+    width:65%;
+    padding: 10px;
+    margin-top:20px;
+}
+
+.input_rec{
+    width:700px;
+    margin:0 auto;
+}
+
+.input_rec input[name=title]{
+    width:400px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+.input_rec input[name=servingsize]{
+    width:50px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+.input_rec input[name=healthlabels]{
+    width:100px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.input_rec input[name=ingredients]{
+    width:630px;
+    height:100px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+.input_rec input[name=calories]{
+    width:80px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:20px;
+}
+
+.input_rec input[name= image]{
+    width:500px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:20px;
+}
+
+.input_rec input[name=url]{
+    width:630px;
+    padding:10px;
+    font-family: baskerville;
+    font-size:16px;
+    margin-bottom:15px;
+    margin-right:10px;
+}
+
+</style>
+
+<div class="behindadd">
+
+<h1>Add a Recipe</h1>
+
+    <div class="input_rec">
 <form method='POST' action='/user'>
     <input name='title' type='text' placeholder='title' />
     <input name='servingsize' type='text' placeholder='serving size' />
     <input name='healthlabels' type='text' placeholder='health labels' />
     <input name='ingredients' type='text' placeholder='ingredients' />
     <input name='calories' type='text' placeholder='calories' />
+    <input name='image' type='text' placeholder='image url' />
     <input name='url' type='text' placeholder='url' />
-    <input name='image' type='text' placeholder='image' />
     <input type='submit' value ='Submit!' />
 </form>
+    </div>
+</div>
 
 
 <% include ../partials/end %>

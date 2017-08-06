@@ -64,7 +64,7 @@ recipesController.create = (req, res) => {
         url: req.body.url,
         image: req.body.image,
     }).then(() => {
-        res.redirect('/user');
+        res.redirect('/categories');
     }).catch(err => {
         console.log(err);
         res.status(500).json({
