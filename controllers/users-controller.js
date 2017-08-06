@@ -86,7 +86,7 @@ usersController.edit = (req, res) => {
          url: req.body.url,
          image: req.body.image,
     }, req.params.id).then(recipes => {
-         res.redirect('/user');
+         res.redirect('/user/savedRecipe');
      }).catch(err => {
          console.log(err);
          res.status(500).json({ err });

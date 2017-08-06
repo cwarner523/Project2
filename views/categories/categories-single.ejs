@@ -1,10 +1,28 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
+<style>
+
+.category_individual{
+    width:450px;
+    border:2px solid red;
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.category_individual img{
+    width:100%;
+    height:100%;
+}
+
+</style>
+
 <div class='individuals'>
 
 <% for(let food of data) {%>
-<div class='category_indivdual' >
+<div class='category_individual' >
     <img src="<%= food.image %>">
     <h1><%= food.title %></h1>
     <h3><%= food.servingsize %></h3>

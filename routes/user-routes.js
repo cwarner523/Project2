@@ -18,9 +18,6 @@ userRoutes.get('/add', (req, res) => {
 
 userRoutes.post('/addRecipe/:id', usersController.saveRecipe);
 
-userRoutes.get('/savedRecipe/:id', usersController.edit);
-userRoutes.put('/savedRecipe/:id', usersController.update);
-
 userRoutes.get('/savedRecipe', usersController.saved);
 userRoutes.use('/recipes', recipesRoutes);
 

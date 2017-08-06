@@ -5,9 +5,11 @@ const authHelpers = require('../services/auth/auth-helpers');
 const recipeHelpers = require('../services/recipes/recipes-helper');
 
 recipesRoutes.get('/', recipesController.index);
-recipesRoutes.delete('asfasasfsaf/:id', recipesController.delete);
 
 recipesRoutes.get('/add', authHelpers.loginRequired, recipesController.create);
+
+recipesRoutes.get('/healthlabels/edit/:id', recipesController.edit);
+recipesRoutes.put('/healthlabels/edit/:id', recipesController.update);
 
 recipesRoutes.get('/:healthlabels', authHelpers.loginRequired, recipesController.category);
 recipesRoutes.get('/:healthlabels/:id', recipesController.id);

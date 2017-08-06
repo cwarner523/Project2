@@ -15,9 +15,8 @@
 
     <a href="<%= data.url %>" target="blank">click here for directions</a>
 
-    <form method='POST' action='/user/edit/<%= data.id %>'>
-         <input type='submit' value ='Edit Recipe!' />
-    </form>
+    <a href='/<%= data.healthlabels %>/edit/<%= data.id %>'>Edit Recipe!</a>
+   
 
     <form method='POST' action='/user/addRecipe/<%= data.id %>'>
          <input type='submit' value ='Save Recipe!' />

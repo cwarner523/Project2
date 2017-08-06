@@ -74,62 +74,35 @@ recipesController.create = (req, res) => {
     });
 };
 
-// recipesController.edit = (req, res) => {
-//     Recipe.findById(req.params.id)
-//     .then(recipes => {
-//         res.render('user/recipe-edit', {
-//             data: recipes,
-//         })
-//     }).catch (err => {
-//         console.log(err);
-//         res.status(500).json({err});
-//     });
-// }
 
-// recipesController.update = (req, res) => {
-//     Recipe.update({
-//         title: req.body.title,
-//         servingsize: req.body.servingsize,
-//         healthlabels: req.body.healthlabels,
-//         ingredients: req.body.ingredients,
-//         calories: req.body.calories,
-//         url: req.body.url,
-//         image: req.body.image,
-//     }, req.params.id).then(recipes => {
-//         res.redirect('/user');
-//     }).catch(err => {
-//         console.log(err);
-//         res.status(500).json({ err });
-//     });
-// }
+recipesController.edit = (req, res) => {
+     User.findById(req.params.id)
+    .then(recipes => {
+        res.render('categories/recipe-edit', {
+             data: recipes,
+            })
+        }).catch (err => {
+            console.log(err);
+         res.status(500).json({err});
+     });
+ }
 
-// recipesController.delete = (req, res) => {
-//     Recipe.destroy(req.params.id)
-    
-//     .then(() => {
-//         res.json({
-//             message: 'hello',
-//         })
-//     }).catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// };
-
-
-recipesController.delete = (req, res) => {
-    console.log("Im here");
-    Recipe.destroy(req.params.id)
-    .then(() => {
-        res.redirect('/savedRecipe');
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-};
-
-
-
+recipesController.update = (req, res) => {
+     User.update({
+         title: req.body.title,
+         servingsize: req.body.servingsize,
+         healthlabels: req.body.healthlabels,
+         ingredients: req.body.ingredients,
+        calories: req.body.calories,
+         url: req.body.url,
+         image: req.body.image,
+    }, req.params.id).then(recipes => {
+         res.redirect('/user/savedRecipe');
+     }).catch(err => {
+         console.log(err);
+         res.status(500).json({ err });
+     });
+ }
 
 
 module.exports = recipesController;
