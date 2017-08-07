@@ -7,8 +7,8 @@ The name of my app is Delicio. It is an app that allows users to look through di
 
 ## Wireframes
 
-<img src= "/public/images/wireframe1">
-<img src= "/public/images/wireframe2">
+<img src= "/public/images/wireframe1.png">
+<img src= "/public/images/wireframe2.png">
 
 ## The technologies Used
 
@@ -18,7 +18,4 @@ For this project I created my own database with 3 different tables a user table,
 
 I plan to add an npm package to the user profile that parses the time in that specifc time zone.
 
-## Wireframes
-
-<img src= "./images/Screen Shot 2017-07-11 at 3.12.49 PM.png">
 
