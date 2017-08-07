@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
+const moment = require('moment');
 
 const usersController = {};
 
@@ -9,7 +10,8 @@ usersController.index = (req, res) => {
     console.log(req.user);
     res.render('user/user-index', {
       user: req.user,
-      currentPage:'Profile'
+      currentPage:'Profile',
+      time: moment()
   });
 };
 
