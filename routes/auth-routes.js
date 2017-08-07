@@ -27,7 +27,7 @@ authRouter.post('/login', passport.authenticate('local', {
 
 authRouter.get('/logout', (req, res) => {
     req.logout();
-    res.refirect('/');
+    res.redirect('/');
 });
 
 module.exports = authRouter;
